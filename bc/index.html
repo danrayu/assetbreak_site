@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AssetBreak - On-Demand Services, Zero Delay</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmXQ5q6AzqM0G+xoFF+gfnyar7WROUX40QKZHt8SJK3U2jHq1Gc0GzCuitDN5gHjpGz0f+Ph1QDK+QwqYMZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .container-margin {
+      margin-bottom: 20px;
+    }
+    .text-center { text-align: center; }
+    .font-extrabold { font-weight: 800; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .rounded-full { border-radius: 9999px; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .shadow-lg { box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+    .shadow-xl { box-shadow: 0 20px 25px rgba(0,0,0,0.1); }
+    .shadow-2xl { box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
+    .bg-white { background-color: #ffffff; }
+    .bg-orange { background-color: #ff9d56; }
+    .bg-gradient-orange-yellow { background: linear-gradient(to right, #ea580c, #facc15); }
+    .bg-gradient-yellow-orange { background: linear-gradient(to left, #facc15, #ea580c); }
+    .bg-gradient-overlay {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: linear-gradient(to right, rgba(78, 30, 4, 0.562), rgba(0, 0, 0, 0.203), rgba(62, 24, 3, 0.562));
+    }
+    .text-white { color: #ffffff; }
+    .text-gray { color: #4b5563; }
+    .text-gray-light { color: #6b7280; }
+    .text-orange { color: #f97316; }
+    .text-orange-dark:hover { color: #ea580c; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .text-5xl { font-size: 3rem; }
+    .text-7xl { font-size: 4.5rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-lg { font-size: 1.125rem; }
+    .h-screen { height: 100vh; }
+    .hero { position: relative; background-size: cover; background-position: center; }
+    .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 2rem 1.5rem; }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+    .drop-shadow { text-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .btn-primary {
+      background-color: #f97316;
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .btn-primary:hover { background-color: #ea580c; transform: scale(1.05); }
+
+    /* Navbar */
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    nav .nav-container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
+    nav .logo { font-size: 1.5rem; font-weight: 800; color: #f97316; transition: color 0.2s; }
+    nav .logo:hover { color: #ea580c; }
+    nav .nav-links a { margin-left: 1.5rem; font-size: 1rem; color: #4b5563; transition: color 0.2s; }
+    nav .nav-links a:hover { color: #f97316; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2.5rem; }
+    .service-card {
+      background-color: #ffffff;
+      padding: 2rem;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+      border-radius: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover { transform: translateY(-0.5rem); box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+    /* Advantages */
+    .advantages { background: linear-gradient(to right, #f97316, #facc15); padding: 5rem 1.5rem; color: #ffffff; text-align: center; }
+    .advantages-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; }
+    .advantage-item { display: flex; flex-direction: column; align-items: center; }
+    .advantage-item i { font-size: 3rem; }
+    .animate-spin-slow { animation: spin-slow 8s linear infinite; }
+    .animate-pulse-slow { animation: pulse 2s ease-in-out infinite; }
+    .animate-bounce { animation: bounce 1s infinite; }
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-1rem); } }
+
+    /* Testimonials */
+    .testimonial { margin-bottom: 2rem; padding: 2rem; border-left: 4px solid; border-radius: 0.5rem; background-color: #fff7ed; }
+    .testimonial.green { background-color: #ecfdf5; border-color: #10b981; }
+    .testimonial p { font-style: italic; margin-bottom: 1rem; }
+    .testimonial cite { font-weight: 600; color: #374151; }
+
+    /* Contact */
+    .contact { background: linear-gradient(to left, #facc15, #f97316); padding: 5rem 1.5rem; text-align: center; color: #ffffff; }
+    .contact a.btn { background-color: #ffffff; color: #f97316; padding: 1rem 2rem; border-radius: 9999px; font-weight: 600; display: inline-block; transition: transform 0.2s ease; }
+    .contact a.btn:hover { transform: scale(1.1); }
+
+    /* Footer */
+    footer { background-color: #1f2937; padding: 2rem 1.5rem; text-align: center; color: #9ca3af; }
+    footer p { margin: 0.25rem 0; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">AssetBreak</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/price.html">Pricing</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('/sadvan.jpg'); height: 60vh;">
+    <div class="bg-gradient-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="text-4xl text-white font-extrabold mb-4 animate-pulse">Need Help Right Now? We’re Already on the Way.</h1>
+      <p class="text-lg text-white mb-6 drop-shadow">AssetBreak — On-Demand Services, Zero Delay.</p>
+      <a href="tel:+31617637693" class="btn-primary">Call Now</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container container-margin">
+    <h2 class="text-4xl font-extrabold text-center mb-12">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fa-solid fa-truck service-icon text-orange"></i>
+        <h3 class="text-2xl font-bold mb-2 text-gray">Transportation of Goods</h3>
+        <p class="text-gray-light">Fast, reliable subcontracted transportation with our L2H2 van.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-box-open service-icon text-green-500"></i>
+        <h3 class="text-2xl font-bold mb-2 text-gray">Moving & Relocation</h3>
+        <p class="text-gray-light">Hassle-free housing moves, whenever you need.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-computer service-icon text-blue-500"></i>
+        <h3 class="text-2xl font-bold mb-2 text-gray">Computer Repairs</h3>
+        <p class="text-gray-light">Quick fixes for your tech troubles.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-hand-sparkles service-icon text-pink-500"></i>
+        <h3 class="text-2xl font-bold mb-2 text-gray">Washing</h3>
+        <p class="text-gray-light">From clothes to carpets, we clean it all.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-leaf service-icon text-teal-500"></i>
+        <h3 class="text-2xl font-bold mb-2 text-gray">Gardening</h3>
+        <p class="text-gray-light">Keep your garden neat and tidy with our help.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-hands-helping service-icon text-purple-500"></i>
+        <h3 class="text-2xl font-bold mb-2 text-gray">Other On-Demand</h3>
+        <p class="text-gray-light">Tell us what you need, we’ll make it happen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section class="advantages">
+    <div class="container text-center">
+      <h2 class="text-4xl font-extrabold mb-8">Why Choose Us?</h2>
+      <div class="advantages-grid">
+        <div class="advantage-item">
+          <i class="fa-solid fa-clock animate-spin-slow"></i>
+          <span class="text-xl font-semibold">Work 24/7</span>
+        </div>
+        <div class="advantage-item">
+          <i class="fa-solid fa-money-bill-wave animate-pulse-slow"></i>
+          <span class="text-xl font-semibold">Accept cash under-the-table</span>
+        </div>
+        <div class="advantage-item">
+          <i class="fa-solid fa-rocket animate-bounce"></i>
+          <span class="text-xl font-semibold">Next to no wait</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="container">
+    <h2 class="text-4xl font-extrabold text-center mb-12">What Our Clients Say</h2>
+    <blockquote class="testimonial">
+      <p>"Called them at midnight for a van — they showed up. No questions. No drama."</p>
+      <cite>— Satisfied Customer</cite>
+    </blockquote>
+    <blockquote class="testimonial green">
+      <p>"They helped me move out, clean up, AND set up my PC — all in one day."</p>
+      <cite>— Happy Client</cite>
+    </blockquote>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="text-4xl font-extrabold mb-4">Ready to Get Started?</h2>
+      <p class="text-lg mb-8">Text or call Daniil & Daniil now at <a href="tel:+31617637693" class="font-semibold">+31617637693</a></p>
+      <a href="tel:+31617637693" class="btn">Get Help Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 AssetBreak VOF. All rights reserved.</p>
+      <p>Owned by Daniil Antimeniuc &amp; Daniil Rayu</p>
+      <p>Under-the-table payments available.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AssetBreak - On-Demand Services, Zero Delay</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmXQ5q6AzqM0G+xoFF+gfnyar7WROUX40QKZHt8SJK3U2jHq1Gc0GzCuitDN5gHjpGz0f+Ph1QDK+QwqYMZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .container-margin {
+      margin-bottom: 20px;
+    }
+    .text-center { text-align: center; }
+    .font-extrabold { font-weight: 800; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .rounded-full { border-radius: 9999px; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .shadow-lg { box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+    .shadow-xl { box-shadow: 0 20px 25px rgba(0,0,0,0.1); }
+    .bg-white { background-color: #ffffff; }
+    .bg-orange { background-color: #ff9d56; }
+    .bg-gradient-orange-yellow { background: linear-gradient(to right, #ea580c, #facc15); }
+    .bg-gradient-yellow-orange { background: linear-gradient(to left, #facc15, #ea580c); }
+    .bg-gradient-overlay {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: linear-gradient(to right, rgba(78, 30, 4, 0.562), rgba(0, 0, 0, 0.203), rgba(62, 24, 3, 0.562));
+    }
+    .text-white { color: #ffffff; }
+    .text-gray { color: #4b5563; }
+    .text-gray-light { color: #6b7280; }
+    .text-orange { color: #f97316; }
+    .text-orange-dark:hover { color: #ea580c; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .text-5xl { font-size: 3rem; }
+    .text-7xl { font-size: 4.5rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-lg { font-size: 1.125rem; }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    /* Main Section */
+    .section {
+      padding: 4rem 1rem;
+      background-color: #fff;
+    }
+
+    /* Button */
+    .btn-primary {
+      background-color: #f97316;
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .btn-primary:hover { background-color: #ea580c; transform: scale(1.05); }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">AssetBreak</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('/sadvan.jpg');">
+    <div class="bg-gradient-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="text-4xl text-white font-extrabold mb-4 animate-pulse">Welcome to AssetBreak – Your Trusted Moving and Transport Partner</h1>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-4">At AssetBreak, we understand that moving things around is never simple, especially when you're juggling student life.</h2>
+      <p class="text-lg mb-8">That's why we're here to offer efficient, affordable, and reliable transport and moving services. Whether you’re relocating your house, need help with an extra-large delivery, or simply need a hand getting things to the right place, we’ve got you covered.</p>
+
+      <h3 class="text-2xl font-semibold mb-4">Our Services</h3>
+      <ul class="list-disc pl-6 mb-8">
+        <li><strong>Transportation of Goods:</strong> Need to move something? From furniture to equipment, we help get your things from A to B safely and without hassle.</li>
+        <li><strong>Housing Relocation:</strong> Moving to a new place? We assist with transporting your belongings quickly, so you can focus on settling into your new home, not the stress of logistics.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mb-4">Why Choose Us?</h3>
+      <ul class="list-disc pl-6 mb-8">
+        <li><strong>Available 24/7:</strong> We work around the clock to ensure that no matter the time, your moving needs are covered. Day or night, we’re just a call away.</li>
+        <li><strong>Cash Payments Accepted:</strong> Sometimes convenience is all about simplicity. We accept cash payments, no questions asked.</li>
+        <li><strong>Fast, No Wait:</strong> We pride ourselves on being quick. Our team doesn’t waste time, and neither should you. Book us, and we’ll be there before you know it.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+      <p class="text-lg mb-8">AssetBreak is a partnership founded by Daniil Antimeniuc (Romanian) and Daniil Rayu (Bulgarian), both of whom are Software Development students with hands-on experience in the field. Even though we’re a new company, we’re here to provide practical, no-nonsense solutions to all your moving and transportation needs.</p>
+
+      <h3 class="text-2xl font-semibold mb-4">Get in Touch</h3>
+      <p class="text-lg mb-8">Need to move something today? Give us a call or send us a message, and let us take the load off your shoulders.</p>
+
+      <h3 class="text-xl font-semibold mb-4">Humorous Slogan Suggestions</h3>
+      <ul class="list-disc pl-6">
+        <li>"We Take Cash. And We’re Very Good at It."</li>
+        <li>"Moving Stuff? No Problem, We’re On It."</li>
+      </ul>
+
+      <a href="tel:+31617637693" class="btn-primary">Call Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center py-4">
+      <p>© 2025 AssetBreak VOF. All rights reserved.</p>
+      <p>Owned by Daniil Antimeniuc &amp; Daniil Rayu</p>
+    </div>
+  </footer>
+</body>
+</html>
